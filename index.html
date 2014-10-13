@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<!-- <html lang="en-US"> -->
+<html lang="en-US" class="fade">
+<!-- 
+  ^ a class of "fade" makes slides fade smoothly into one another
+ -->
+<!-- <html lang="en-US" class="nonumbers"> -->
+<!-- 
+  If you want no numbers on the slides add a "nonumbers" class 
+  to the HTML element.
+  Adding a class of "fade" will make slides fade into another. 
+-->
+<head>
+  <meta charset="UTF-8">
+  <title>Accessibility In Gaia</title>
+<!-- 
+  If you upload your slides to the web, ensure that you have 
+  a good title - this shows up in search results and social
+  media links
+ -->
+  <meta name="viewport" content="width=device-width, user-scalable=yes">
+  <link rel="stylesheet" href="themes/mozilla/styles/prism.css">
+  <link rel="stylesheet" href="themes/mozilla/styles/style.css">
+  <style>
+    pre.language-markup {
+      background: none;
+      //font-size: 30px;
+      font-weight: 700;
+    }
+
+    pre.language-markup code:before {
+      display: none;
+    }
+
+    dl > dd {
+      text-align: right;
+      font-style: italic;
+    }
+    dl > dd:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body class="list">
+  <header class="caption">
+    <h1>Accessibility In Gaia</h1>
+    <p class="footer">
+      Yura Zenevich,
+      <a href="http://twitter.com/eeejay">@yura_zen</a>
+      Eitan Isaacson,
+      <a href="http://twitter.com/eeejay">@eeejay</a>
+    </p>
+  </header>
+  <aside class="talkdescription">
+    <p>This slide deck is using the shower system - roll over the previews to see the notes and click any slide to go into presentation mode. Then use keys to navigate. <button onclick="goFullScreen()">Go fullscreen</button></p>
+    <p class="abstract">
+      <strong>Abstract: </strong>
+      These slides are for a Firefox OS developer's meeting where we showcase and discuss accessibility.
+    </p>
+  </aside>
+
+<!-- 
+    Simply copy the whole block for each slide you want.
+  Special slides get extra classes. Each slide needs an ID 
+  to allow for bookmarking and target jumping.
+-->
+
+  <div id="cover" class="slide"><div>
+    <section>
+      <header>
+        <h2>Accessibility In Gaia</h2>
+      </header>
+            <blockquote>
+        <p>Accessibility in Gaia is important</p>
+        <p class="byline">Yura [:yzen], Eitan [:eeejay]</p>
+      </blockquote>
+    </section>
+  </div></div>
+
+<!-- end slide block -->
+
+  <div id="disclaimers" class="slide"><div>
+    <section>
+      <header>
+        <h2>Disclaimers</h2>
+      </header>
+      <ul>
+        <li>We are not lawyers</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+
+  <div id="intro" class="slide"><div>
+    <section>
+      <header>
+        <h2>Introduction</h2>
+      </header>
+      <p></p>
+      <footer class="notes">
+        <ul>
+          <li>What is accessibility?</li>
+          <li>What does accessibility look like on mobile?</li>
+          <li>What about users who are blind?</li>
+        </ul>
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="screenreader" class="slide"><div>
+    <section>
+      <header>
+        <h2>Screen Reader</h2>
+      </header>
+        <ul>
+          <li>What is a screen reader?</li>
+          <li>How can blind users use a touch screen?</li>
+          <li>How do you turn it on?</li>
+        </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="screenreader-demo" class="slide autoplay cover"><div>
+    <section>
+      <header>
+      </header>
+      <video controls loop style="width: 100%;" src="videos/sr-demo.webm">
+      </video>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+   <div id="top-three-1" class="slide"><div>
+    <section>
+      <header>
+        <h2>Top Three Issues</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">Unhidden visual elements</li>
+        <li>Unlabeled controls</li>
+        <li>Inoperable controls</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+ </div></div>
+
+  <div id="object-persistence" class="slide"><div>
+    <section>
+      <header>
+        <h2>Object Persistence</h2>
+      </header>
+      <style>
+        #peek-a-boo {
+          position: relative;
+          width: 65vh;
+          height: 65vh;
+          margin: 0 auto;
+        }
+
+        #peek-a-boo > img {
+          position: absolute;
+          display: block;
+        }
+        #hands {
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+        #face {
+          width: 150px;
+          height: 150px;
+          left: calc(50% - 75px);
+          top: calc(50% - 85px);
+        }
+        #peek-a-boo-checkbox {
+          margin-left: -10%;
+        }
+      </style>
+      <style>
+        #hands {
+          opacity: 1;
+        }
+        #face {
+          transition: all 0.5s ease;
+        }
+        input:not(:checked) ~ #face {
+          transform: translateX(35vh);
+        }
+        input:checked ~ #face {
+          transform: translateX(0px);
+        }
+        </style>
+      <div id="peek-a-boo">
+        <input type="checkbox" id="peek-a-boo-checkbox"><label for="peek-a-boo-checkbox"> Peek-a-boo!</label>
+        <img src="pictures/a11y/BabyFace.gif" id="face" alt="Face">
+        <img src="pictures/a11y/hands.png" id="hands" alt="Face">
+      </div>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="visibility-management" class="slide"><div>
+    <section>
+      <header>
+        <h2>Visibility Management</h2>
+      </header>
+      <ul>
+        <li>CSS
+          <ul>
+          <li>visibility: hidden;</li>
+          <li>display: none;</li>
+          </ul>
+        </li>
+        <li>DOM
+          <ul>
+          <li>element.removeChild(child);</li>
+          </ul>
+        </li>
+        <li>Last resort ARIA
+          <ul>
+          <li>aria-hidden=true</li>
+          </ul>
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="top-three-2" class="slide"><div>
+    <section>
+      <header>
+        <h2>Top Three Issues</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">Unhidden visual elements</li>
+        <li class="active">Unlabeled controls</li>
+        <li>Inoperable controls</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="honorable-mentions" class="slide"><div>
+    <section>
+      <header>
+        <h2>Honorable Mentions</h2>
+      </header>
+      <ul class="inner">
+        <li class="active">Role misuse</li>
+        <li>Using ARIA and role attributes for styling</li>
+        <li>Markup order makes all the difference (flex is your best friend)</li>
+        <li>Fixed headers/footers</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="our-own-hacks" class="slide"><div>
+    <section>
+      <header>
+        <h2>Our Own Hacks</h2>
+      </header>
+      <dl>
+        <dt class="active">Typing and dialing</dt> <dd>We introduced a new role called "key"</dd>
+        <dt>View swipe interactions</dt> <dd>We use the wheel events</dd>
+        <dt>Value adjust interactions</dt> <dd>We use keypad up/down events</dd>
+      </dl>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="we-need-help" class="slide"><div>
+    <section>
+      <header>
+        <h2>We Need Help</h2>
+      </header>
+      <ul>
+        <li>Incorporate this into your development and review</li>
+        <li>Don't introduce new CSS rules with ARIA and roles</li>
+        <li>Use the screen reader</li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/prism.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+</body>
+</html>
