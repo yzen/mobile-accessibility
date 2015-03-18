@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <!-- <html lang="en-US"> -->
 <html lang="en-US" class="fade">
-<!-- 
+<!--
   ^ a class of "fade" makes slides fade smoothly into one another
  -->
 <!-- <html lang="en-US" class="nonumbers"> -->
-<!-- 
-  If you want no numbers on the slides add a "nonumbers" class 
+<!--
+  If you want no numbers on the slides add a "nonumbers" class
   to the HTML element.
-  Adding a class of "fade" will make slides fade into another. 
+  Adding a class of "fade" will make slides fade into another.
 -->
 <head>
   <meta charset="UTF-8">
-  <title>Accessibility In Gaia</title>
-<!-- 
-  If you upload your slides to the web, ensure that you have 
+  <title>Mobile Accessibily</title>
+<!--
+  If you upload your slides to the web, ensure that you have
   a good title - this shows up in search results and social
   media links
  -->
@@ -43,36 +43,30 @@
 </head>
 <body class="list">
   <header class="caption">
-    <h1>Accessibility In Gaia</h1>
+    <h1>Mobile Accessibily</h1>
     <p class="footer">
       Yura Zenevich,
       <a href="http://twitter.com/eeejay">@yura_zen</a>
-      Eitan Isaacson,
-      <a href="http://twitter.com/eeejay">@eeejay</a>
     </p>
   </header>
   <aside class="talkdescription">
     <p>This slide deck is using the shower system - roll over the previews to see the notes and click any slide to go into presentation mode. Then use keys to navigate. <button onclick="goFullScreen()">Go fullscreen</button></p>
-    <p class="abstract">
-      <strong>Abstract: </strong>
-      These slides are for a Firefox OS developer's meeting where we showcase and discuss accessibility.
-    </p>
   </aside>
 
-<!-- 
+<!--
     Simply copy the whole block for each slide you want.
-  Special slides get extra classes. Each slide needs an ID 
+  Special slides get extra classes. Each slide needs an ID
   to allow for bookmarking and target jumping.
 -->
 
   <div id="cover" class="slide"><div>
     <section>
       <header>
-        <h2>Accessibility In Gaia</h2>
+        <h2>Mobile Accessibility</h2>
       </header>
-            <blockquote>
-        <p>Accessibility in Gaia is important</p>
-        <p class="byline">Yura [:yzen], Eitan [:eeejay]</p>
+      <blockquote>
+        <p>Mobile accessibility is important</p>
+        <p class="byline">Yura [:yzen]</p>
       </blockquote>
     </section>
   </div></div>
@@ -85,27 +79,53 @@
         <h2>Disclaimers</h2>
       </header>
       <ul>
-        <li>We are not lawyers</li>
+        <li>I'll be talking from a perspective of a certain Mozilla product</li>
+        <li>My focus is on visual impairment</li>
       </ul>
       <footer class="notes">
       </footer>
     </section>
   </div></div>
 
-
-  <div id="intro" class="slide"><div>
+  <div id="whattheysay" class="slide"><div>
     <section>
       <header>
-        <h2>Introduction</h2>
+        <h2>Web Accessibility Expectations</h2>
       </header>
-      <p></p>
+      <blockquote>
+        <p>Thanks for that link, it was a very interesting article!</p>
+        <p class="byline">What a happy blind web surfer says</p>
+      </blockquote>
       <footer class="notes">
-        <ul>
-          <li>What is accessibility?</li>
-          <li>What does accessibility look like on mobile?</li>
-          <li>What about users who are blind?</li>
-        </ul>
+        If a user with a disability is capable to access a resource online unaided, it is considered a success.
       </footer>
+    </section>
+  </div></div>
+
+  <div id="whattheymean" class="slide"><div>
+    <section>
+      <header>
+        <h2>Web Accessibility Expectations</h2>
+      </header>
+      <blockquote class="lots" style="font-size: 25px;">
+        <p>Once the page loaded, I had to rummage through endless lists, unlabeled images, useless links, a search, and a sign-in form. I then reached the actual article where each paragraph was interrupted by social network share buttons and more unlabeled images.
+        Mid-article, I figured out that I needed to press a link that consisted of two greater-than characters to read the rest, not before I, once again, sifted past all the useless navigation links, mute images, and forms. But after all that I must say: very interesting article!</p>
+        <p class="byline">What a happy blind web surfer means</p>
+      </blockquote>
+      <footer class="notes">
+        Users are forgiving when it comes to infrequent tasks, like visiting a site for the first and only time. The web is still enabling and miraculous, and users with disabilities, unfortunately, are accustomed to inconvenience.
+      </footer>
+    </section>
+  </div></div>
+
+  <div id="native-expectations" class="slide"><div>
+    <section>
+      <header>
+        <h2>Native Accessibility Expectations</h2>
+      </header>
+      <ul>
+        <li>The expectations of a slick experience remains the same as what users have seen on native.</li>
+      </ul>
     </section>
   </div></div>
 
@@ -117,7 +137,6 @@
         <ul>
           <li>What is a screen reader?</li>
           <li>How can blind users use a touch screen?</li>
-          <li>How do you turn it on?</li>
         </ul>
       <footer class="notes">
       </footer>
@@ -135,7 +154,7 @@
     </section>
   </div></div>
 
-   <div id="top-three-1" class="slide"><div>
+  <div id="top-three-1" class="slide"><div>
     <section>
       <header>
         <h2>Top Three Issues</h2>
@@ -148,59 +167,18 @@
       <footer class="notes">
       </footer>
     </section>
- </div></div>
+  </div></div>
 
-  <div id="object-persistence" class="slide"><div>
+  <div id="visibility-challenges" class="slide"><div>
     <section>
       <header>
-        <h2>Object Persistence</h2>
+        <h2>Visibility Challenges</h2>
       </header>
-      <style>
-        #peek-a-boo {
-          position: relative;
-          width: 65vh;
-          height: 65vh;
-          margin: 0 auto;
-        }
-
-        #peek-a-boo > img {
-          position: absolute;
-          display: block;
-        }
-        #hands {
-          left: 0;
-          top: 0;
-          width: 100%;
-        }
-        #face {
-          width: 150px;
-          height: 150px;
-          left: calc(50% - 75px);
-          top: calc(50% - 85px);
-        }
-        #peek-a-boo-checkbox {
-          margin-left: -10%;
-        }
-      </style>
-      <style>
-        #hands {
-          opacity: 1;
-        }
-        #face {
-          transition: all 0.5s ease;
-        }
-        input:not(:checked) ~ #face {
-          transform: translateX(35vh);
-        }
-        input:checked ~ #face {
-          transform: translateX(0px);
-        }
-        </style>
-      <div id="peek-a-boo">
-        <input type="checkbox" id="peek-a-boo-checkbox"><label for="peek-a-boo-checkbox"> Peek-a-boo!</label>
-        <img src="pictures/a11y/BabyFace.gif" id="face" alt="Face">
-        <img src="pictures/a11y/hands.png" id="hands" alt="Face">
-      </div>
+      <ul>
+        <li>Modal dialogs</li>
+        <li>Transitions</li>
+        <li>Fixed headers/footers</li>
+      </ul>
       <footer class="notes">
       </footer>
     </section>
@@ -249,6 +227,33 @@
     </section>
   </div></div>
 
+  <div id="input-challenges" class="slide"><div>
+    <section>
+      <header>
+        <h2>Input Challenges</h2>
+      </header>
+      <ul>
+        <li>Click - It Works With Caveats
+          <ul>
+            <li>Click target and widget need to match</li>
+          </ul>
+        </li>
+        <li>Everything else
+          <ul>
+            <li>Zoom in/out</li>
+            <li>Pan</li>
+            <li>Rotate</li>
+            <li>Adjust value</li>
+            <li>Move between pages</li>
+            <li>etc</li>
+          </ul>
+        </li>
+      </ul>
+      <footer class="notes">
+      </footer>
+    </section>
+  </div></div>
+
   <div id="honorable-mentions" class="slide"><div>
     <section>
       <header>
@@ -258,7 +263,6 @@
         <li class="active">Role misuse</li>
         <li>Using ARIA and role attributes for styling</li>
         <li>Markup order makes all the difference (flex is your best friend)</li>
-        <li>Fixed headers/footers</li>
         <li>pointer-events: none;</li>
       </ul>
       <footer class="notes">
@@ -284,15 +288,8 @@
   <div id="we-need-help" class="slide"><div>
     <section>
       <header>
-        <h2>We Need Help</h2>
+        <h2>Thanks</h2>
       </header>
-      <ul>
-        <li>Incorporate this into your development and review</li>
-        <li>Don't introduce new CSS rules with ARIA and roles</li>
-        <li>Use the screen reader</li>
-      </ul>
-      <footer class="notes">
-      </footer>
     </section>
   </div></div>
 
